@@ -1,0 +1,24 @@
+﻿:root {
+  font-family: Inter, 'Segoe UI', system-ui, sans-serif;
+  color: #e5edf5;
+  background: #0b1017;
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --surface: #111923;
+  --border: #263241;
+  --muted: #9aaabd;
+  --accent: #57b9ec;
+  font-size: 14px;
+  line-height: 1.5;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button { font: inherit; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+h1, h2, p { margin: 0; }
+button, .latest-value, .market-tag, .recharts-wrapper { font-variant-numeric: tabular-nums; }
+
