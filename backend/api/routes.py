@@ -21,6 +21,15 @@ def read_root():
     return {"Hello": "World"}
 
 
+@router.get("/index_data")
+def read_index_data(index_name: str):
+    return database_handler.get_index_data(index_name)
+
+
 @router.get("/ma")
 def read_moving_average(index_name: str, ma_window: int):
     return database_handler.get_data(index_name, ma_window)
+
+@router.get("/ma200")
+def read_ma200_data(index_name: str, ma_window: int):
+    return database_handler.get_ma200_data(index_name, ma_window)

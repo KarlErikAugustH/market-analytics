@@ -4,6 +4,8 @@ import os
 from dotenv import load_dotenv
 from data.DataClient import DataClient
 from database.DatabaseHandler import DatabaseHandler
+from data.Index import Index
+
 
 OMXS30_TICKERS = [
     "ABB.ST",
@@ -56,7 +58,21 @@ if __name__ == "__main__":
     database_handler.create_table()
     database_handler.save_data(result, "OMXS30", 50)
 
-    
+    # database_handler.create_ma200_table()
+    # database_handler.save_ma200_data(data_client.calculate_moving_average(data, 200), "OMXS30")
+
+    print("---------------------------")
+    result = data_client.calculate_moving_average(data, 200)
+    database_handler.create_ma200_table()
+    database_handler.save_ma200_data(result, "OMXS30", 200)
+
+
+
+
+    index = Index("^OMX")
+    index_data = index.get_index_data("2023-01-01", "")
+    database_handler.create_index_table()
+    database_handler.save_index_data(index_data["^OMX"], "^OMX")
 
 
 
